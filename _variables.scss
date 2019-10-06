@@ -1,0 +1,32 @@
+$textstyle-typefaces: (
+  sans: (
+    family: ("Helvetica Neue", "Arial", sans-serif),
+    style: normal,
+    weight: 400,
+  ),
+  sans-bold: (
+    family: ("Helvetica Neue", "Arial", sans-serif),
+    style: normal,
+    weight: 700,
+  ),
+  serif: (
+    family: ("Georgia", serif),
+    style: normal,
+    weight: 400,
+  ),
+  serif-italic: (
+    family: ("Georgia", serif),
+    style: italic,
+    weight: 400,
+  ),
+  mono: (
+    family: ("Menlo", monospace),
+    style: normal,
+    weight: 400,
+  ),
+  system: (
+    family: (-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"),
+    style: normal,
+    weight: 400,
+  ),
+) !default;

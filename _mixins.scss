@@ -1,0 +1,11 @@
+@mixin textstyle ($settings) {
+  @if map-has-key ($settings, typeface) {
+    $typeface: map-get($textstyle-typefaces, map-get($settings, typeface));
+
+    @if $typeface {
+      font-family: map-get($typeface, family);
+      font-style: map-get($typeface, style);
+      font-weight: map-get($typeface, weight);
+    }
+  }
+}
