@@ -14,4 +14,19 @@
   @if map-has-key($settings, tracking) {
     letter-spacing: 0.001em * map-get($settings, tracking);
   }
+
+  // OpenType features
+  @if map-has-key($settings, features) {
+    $features: ();
+
+    @each $feature in map-get($settings, features) {
+      $features: append($features, quote($feature), $separator: comma);
+
+      @if $feature == palt {
+        font-kerning: normal;
+      }
+    }
+
+    font-feature-settings: $features;
+  }
 }
