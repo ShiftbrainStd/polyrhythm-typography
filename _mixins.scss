@@ -15,6 +15,37 @@
     letter-spacing: 0.001em * map-get($settings, tracking);
   }
 
+  // Letter case
+  @if map-has-key($settings, case) {
+    $case: map-get($settings, case);
+
+    @if $case == all-lowercase {
+      text-transform: lowercase;
+    }
+
+    @else if $case == all-caps {
+      text-transform: uppercase;
+    }
+
+    @else if $case == small-caps {
+      text-transform: uppercase;
+
+      @supports (font-variant-caps: small-caps) {
+        font-variant-caps: small-caps;
+        text-transform: none;
+      }
+    }
+
+    @else if $case == all-small-caps {
+      text-transform: uppercase;
+
+      @supports (font-variant-caps: small-caps) {
+        font-variant-caps: small-caps;
+        text-transform: lowercase;
+      }
+    }
+  }
+
   // OpenType features
   @if map-has-key($settings, features) {
     $features: ();
