@@ -1,4 +1,5 @@
 @mixin textstyle ($settings) {
+  // Typeface
   @if map-has-key ($settings, typeface) {
     $typeface: map-get($textstyle-typefaces, map-get($settings, typeface));
 
@@ -7,5 +8,10 @@
       font-style: map-get($typeface, style);
       font-weight: map-get($typeface, weight);
     }
+  }
+
+  // Tracking
+  @if map-has-key($settings, tracking) {
+    letter-spacing: 0.001em * map-get($settings, tracking);
   }
 }
