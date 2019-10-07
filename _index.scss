@@ -1,2 +1,76 @@
-@import "variables";
-@import "mixins";
+@import "mq";
+@import "typefaces";
+
+@mixin textstyle ($settings) {
+  // Typeface
+  @if map-has-key ($settings, typeface) {
+    $typeface: map-get($textstyle-typefaces, map-get($settings, typeface));
+
+    @if $typeface {
+      font-family: map-get($typeface, family);
+      font-style: map-get($typeface, style);
+      font-weight: map-get($typeface, weight);
+    }
+  }
+
+  // Tracking
+  @if map-has-key($settings, tracking) {
+    letter-spacing: 0.001em * map-get($settings, tracking);
+  }
+
+  // Letter case
+  @if map-has-key($settings, case) {
+    $case: map-get($settings, case);
+
+    @if $case == all-lowercase {
+      text-transform: lowercase;
+    }
+
+    @else if $case == all-caps {
+      text-transform: uppercase;
+    }
+
+    @else if $case == small-caps {
+      text-transform: uppercase;
+
+      @supports (font-variant-caps: small-caps) {
+        font-variant-caps: small-caps;
+        text-transform: none;
+      }
+    }
+
+    @else if $case == all-small-caps {
+      text-transform: uppercase;
+
+      @supports (font-variant-caps: small-caps) {
+        font-variant-caps: small-caps;
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  // OpenType features
+  @if map-has-key($settings, features) {
+    $features: ();
+
+    @each $feature in map-get($settings, features) {
+      $features: append($features, quote($feature), $separator: comma);
+
+      @if $feature == palt {
+        font-kerning: normal;
+      }
+    }
+
+    font-feature-settings: $features;
+  }
+
+  // Breakpoints
+  // Depends on _mq.scss
+  @if map-has-key($settings, breakpoints) {
+    @each $breakpoint, $settings in map-get($settings, breakpoints) {
+      @include mq($breakpoint) {
+        @include textstyle($settings);
+      }
+    }
+  }
+}
