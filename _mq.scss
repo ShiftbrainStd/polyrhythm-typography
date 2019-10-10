@@ -1,11 +1,11 @@
 // Media queries
 
 $mq-breakpoints: (
-  xs: 0,
-  sm: 36em, // 576px
-  md: 48em, // 768px
-  lg: 64em, // 1024px
-  xl: 80em, // 1280px
+  "xs": 0,
+  "sm": 36em, // 576px
+  "md": 48em, // 768px
+  "lg": 64em, // 1024px
+  "xl": 80em, // 1280px
 ) !default;
 
 @mixin mq($from: false, $until: false) {
