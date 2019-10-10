@@ -1,0 +1,11 @@
+@import "textstyle";
+
+$theme-textstyle-heading-1: (
+  "typeface": "sans-bold",
+  "case": "all-small-caps",
+  "tracking": 50,
+);
+
+h1 {
+  @include textstyle($theme-textstyle-heading-1);
+}
