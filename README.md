@@ -1,1 +1,6 @@
-# textstyle
+# polyrhythm-textstyle
+
+```
+$ npm install
+$ npm start
+```
