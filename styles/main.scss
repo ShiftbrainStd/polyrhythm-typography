@@ -1,11 +1,12 @@
-@import "textstyle";
+@use "textstyle";
 
 $theme-textstyle-heading-1: (
   "typeface": "sans-bold",
   "case": "all-small-caps",
   "tracking": 50,
+  "features": ("onum"),
 );
 
 h1 {
-  @include textstyle($theme-textstyle-heading-1);
+  @include textstyle.textstyle($theme-textstyle-heading-1);
 }

@@ -1,26 +1,30 @@
-@import "mq";
-@import "typefaces";
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+
+@use "mq" as *;
+@use "typefaces" as *;
 
 @mixin textstyle ($settings) {
   // Typeface
-  @if map-has-key ($settings, "typeface") {
-    $typeface: map-get($textstyle-typefaces, map-get($settings, "typeface"));
+  @if map.has-key($settings, "typeface") {
+    $typeface: map.get($textstyle-typefaces, map.get($settings, "typeface"));
 
     @if $typeface {
-      font-family: map-get($typeface, "family");
-      font-style: map-get($typeface, "style");
-      font-weight: map-get($typeface, "weight");
+      font-family: map.get($typeface, "family");
+      font-style: map.get($typeface, "style");
+      font-weight: map.get($typeface, "weight");
     }
   }
 
   // Tracking
-  @if map-has-key($settings, "tracking") {
-    letter-spacing: 0.001em * map-get($settings, "tracking");
+  @if map.has-key($settings, "tracking") {
+    letter-spacing: 0.001em * map.get($settings, "tracking");
   }
 
   // Letter case
-  @if map-has-key($settings, "case") {
-    $case: map-get($settings, "case");
+  @if map.has-key($settings, "case") {
+    $case: map.get($settings, "case");
 
     @if $case == "all-lowercase" {
       text-transform: lowercase;
@@ -50,11 +54,11 @@
   }
 
   // OpenType features
-  @if map-has-key($settings, "features") {
+  @if map.has-key($settings, "features") {
     $features: ();
 
-    @each $feature in map-get($settings, "features") {
-      $features: append($features, quote($feature), $separator: comma);
+    @each $feature in map.get($settings, "features") {
+      $features: list.append($features, string.quote($feature), $separator: comma);
 
       @if $feature == "palt" {
         font-kerning: normal;
@@ -66,8 +70,8 @@
 
   // Breakpoints
   // Depends on _mq.scss
-  @if map-has-key($settings, "breakpoints") {
-    @each $breakpoint, $settings in map-get($settings, "breakpoints") {
+  @if map.has-key($settings, "breakpoints") {
+    @each $breakpoint, $settings in map.get($settings, "breakpoints") {
       @include mq($breakpoint) {
         @include textstyle($settings);
       }

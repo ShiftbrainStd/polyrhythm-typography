@@ -1,5 +1,7 @@
 // Media queries
 
+@use "sass:map";
+
 $mq-breakpoints: (
   "xs": 0,
   "sm": 36em, // 576px
@@ -10,11 +12,11 @@ $mq-breakpoints: (
 
 @mixin mq($from: false, $until: false) {
   @if $from {
-    @media (min-width: #{map-get($mq-breakpoints, $from)}) {
+    @media (min-width: #{map.get($mq-breakpoints, $from)}) {
       @content;
     }
   } @else {
-    @media not all and (min-width: #{map-get($mq-breakpoints, $until)}) {
+    @media not all and (min-width: #{map.get($mq-breakpoints, $until)}) {
       @content;
     }
   }
