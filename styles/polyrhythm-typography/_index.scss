@@ -8,7 +8,7 @@
 @mixin textstyle ($settings) {
   // Typeface
   @if map.has-key($settings, "typeface") {
-    $typeface: map.get($textstyle-typefaces, map.get($settings, "typeface"));
+    $typeface: map.get($typefaces, map.get($settings, "typeface"));
 
     @if $typeface {
       font-family: map.get($typeface, "family");

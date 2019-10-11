@@ -1,4 +1,4 @@
-@use "textstyle";
+@use "polyrhythm-typography";
 
 $theme-textstyle-heading-1: (
   "typeface": "sans-bold",
@@ -8,5 +8,5 @@ $theme-textstyle-heading-1: (
 );
 
 h1 {
-  @include textstyle.textstyle($theme-textstyle-heading-1);
+  @include polyrhythm-typography.textstyle($theme-textstyle-heading-1);
 }

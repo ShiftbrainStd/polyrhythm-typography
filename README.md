@@ -1,4 +1,4 @@
-# polyrhythm-textstyle
+# polyrhythm-typography
 
 ```
 $ npm install
