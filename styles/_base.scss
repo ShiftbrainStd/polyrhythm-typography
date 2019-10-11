@@ -1,0 +1,10 @@
+@use "polyrhythm-typography";
+@use "theme";
+
+body {
+  @include polyrhythm-typography.textstyle(theme.$textstyle-body)
+}
+
+h1 {
+  @include polyrhythm-typography.textstyle(theme.$textstyle-heading-1);
+}

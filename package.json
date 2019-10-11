@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "sass:watch": "chokidar 'styles/**/*.scss' -c 'npm run sass:build' --initial",
-    "sass:build": "sass styles/main.scss main.css",
+    "sass:watch": "chokidar '**/*.scss' -c 'npm run sass:build' --initial",
+    "sass:build": "sass main.scss main.css",
     "serve": "browser-sync start -s -f '*.html' '*.css'",
     "start": "npm-run-all -p sass:watch serve",
     "build": "npm run sass:build"
