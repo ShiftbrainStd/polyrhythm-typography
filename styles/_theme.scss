@@ -1,9 +1,11 @@
 $textstyle-body: (
   "typeface": "serif",
+  "sizes": (0, 3),
 );
 
 $textstyle-heading-1: (
   "typeface": "sans-bold",
+  "sizes": (4, 1),
   "case": "all-small-caps",
   "tracking": 50,
   "features": ("onum"),

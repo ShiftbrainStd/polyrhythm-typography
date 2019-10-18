@@ -4,6 +4,7 @@
 
 @use "mq" as *;
 @use "typefaces" as *;
+@use "typescale";
 
 @mixin textstyle ($settings) {
   // Typeface
@@ -15,6 +16,11 @@
       font-style: map.get($typeface, "style");
       font-weight: map.get($typeface, "weight");
     }
+  }
+
+  // Font size and line height
+  @if map.has-key($settings, "sizes") {
+    @include typescale.sizes(map.get($settings, "sizes"));
   }
 
   // Tracking

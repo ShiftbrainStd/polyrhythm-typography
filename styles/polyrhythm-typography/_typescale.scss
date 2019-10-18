@@ -1,0 +1,34 @@
+@use "sass:list";
+@use "sass:map";
+
+$font-sizes: (
+  4: 2rem,
+  3: 1.6rem,
+  2: 1.333rem,
+  1: 1.143rem,
+  0: 1rem,
+  -1: 0.889rem,
+  -2: 0.8rem,
+) !default;
+
+$line-heights: (
+  4: 2,
+  3: 1.75,
+  2: 1.5,
+  1: 1.25,
+  0: 1,
+) !default;
+
+@mixin sizes ($font-size, $line-height: null) {
+  @if type-of($font-size) == list {
+    $line-height: list.nth($font-size, 2);
+    $font-size: list.nth($font-size, 1);
+  }
+
+  font-size: map.get($font-sizes, $font-size);
+  line-height: sizes-lh($line-height);
+}
+
+@function sizes-lh ($line-height) {
+  @return map.get($line-heights, $line-height);
+}
