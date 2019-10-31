@@ -24,19 +24,28 @@
     "serve": "browser-sync start -c ./.config/browser-sync.js",
     "start": "npm-run-all -p sass:watch serve",
     "build": "npm run sass:build",
-    "lint": "stylelint **/*.scss"
+    "lint": "stylelint **/*.scss",
+    "test": "jest"
   },
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "chokidar-cli": "^2.1.0",
+    "fast-glob": "^3.1.0",
+    "jest": "^24.9.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.23.2",
+    "sass-true": "^5.0.0",
     "stylelint": "^11.1.1",
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-scss": "^3.12.0"
   },
   "stylelint": {
-    "extends": "stylelint-config-recommended-scss"
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "string-quotes": "double"
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

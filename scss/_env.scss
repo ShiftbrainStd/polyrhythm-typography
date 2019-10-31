@@ -1,0 +1,9 @@
+$env: "default" !default;
+
+@function get() {
+  @return $env;
+}
+
+@function is($value) {
+  @return get() == $value;
+}
