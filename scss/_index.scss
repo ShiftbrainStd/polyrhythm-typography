@@ -1,10 +1,18 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:string";
+@use "sass:meta";
 
-@use "mq" as *;
-@use "typefaces" as *;
-@use "typescale";
+@use "defaults" as vars;
+
+$mq-breakpoints: vars.$breakpoints !default;
+$typefaces: vars.$typefaces !default;
+$font-sizes: vars.$font-sizes !default;
+$line-heights: vars.$line-heights !default;
+
+@use "mq" as * with ($breakpoints: $mq-breakpoints);
+
+@use "typescale" with ($font-sizes: $font-sizes, $line-heights: $line-heights );
 
 @mixin textstyle ($settings) {
   // Typeface

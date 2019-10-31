@@ -1,23 +1,8 @@
 @use "sass:list";
 @use "sass:map";
 
-$font-sizes: (
-  4: 2rem,
-  3: 1.6rem,
-  2: 1.333rem,
-  1: 1.143rem,
-  0: 1rem,
-  -1: 0.889rem,
-  -2: 0.8rem,
-) !default;
-
-$line-heights: (
-  4: 2,
-  3: 1.75,
-  2: 1.5,
-  1: 1.25,
-  0: 1,
-) !default;
+$font-sizes: () !default;
+$line-heights: () !default;
 
 @mixin sizes ($font-size, $line-height: null) {
   @if type-of($font-size) == list {

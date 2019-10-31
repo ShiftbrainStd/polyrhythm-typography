@@ -1,3 +1,11 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 36em, // 576px
+  "md": 48em, // 768px
+  "lg": 64em, // 1024px
+  "xl": 80em, // 1280px
+);
+
 $typefaces: (
   "sans": (
     "family": ("Helvetica Neue", "Arial", sans-serif),
@@ -29,4 +37,23 @@ $typefaces: (
     "style": normal,
     "weight": 400,
   ),
+);
+
+
+$font-sizes: (
+  4: 2rem,
+  3: 1.6rem,
+  2: 1.333rem,
+  1: 1.143rem,
+  0: 1rem,
+  -1: 0.889rem,
+  -2: 0.8rem,
+) !default;
+
+$line-heights: (
+  4: 2,
+  3: 1.75,
+  2: 1.5,
+  1: 1.25,
+  0: 1,
 ) !default;
