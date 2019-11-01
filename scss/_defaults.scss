@@ -1,3 +1,5 @@
+/// Default breakpoints
+/// @type Map
 $breakpoints: (
   "xs": 0,
   "sm": 36em, // 576px
@@ -6,6 +8,8 @@ $breakpoints: (
   "xl": 80em, // 1280px
 );
 
+/// Default typefaces
+/// @type Map
 $typefaces: (
   "sans": (
     "family": ("Helvetica Neue", "Arial", sans-serif),
@@ -39,7 +43,8 @@ $typefaces: (
   ),
 );
 
-
+/// Default font sizes
+/// @type Map
 $font-sizes: (
   4: 2rem,
   3: 1.6rem,
@@ -50,6 +55,8 @@ $font-sizes: (
   -2: 0.8rem,
 ) !default;
 
+/// Default line heights
+/// @type Map
 $line-heights: (
   4: 2,
   3: 1.75,

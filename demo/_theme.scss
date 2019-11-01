@@ -1,8 +1,11 @@
 $textstyle-body: (
   "typeface": "serif",
   "sizes": (0, 3),
+  "tracking": 50,
+  "features": ("onum"),
   "breakpoints": (
     "md": (
+      // change the font size at md
       sizes: (2, 3)
     )
   )

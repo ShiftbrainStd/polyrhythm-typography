@@ -1,9 +1,18 @@
+/// Environment variable
+/// @type string
 $env: "default" !default;
 
+/// Returns the current $env value
+///
+/// @return {string} $env value
 @function get() {
   @return $env;
 }
 
+/// Checks a string against the current $env value
+///
+/// @param {string} $value - String to use for matching
+/// @return {boolean} True if $value matches the current $env
 @function is($value) {
   @return get() == $value;
 }

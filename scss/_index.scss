@@ -5,15 +5,52 @@
 
 @use "defaults" as vars;
 
+/// Reference breakpoints
+/// @type Map
 $mq-breakpoints: vars.$breakpoints !default;
+
+/// Reference typeface.
+/// @type Map
+/// @prop {list} $typeface[id].family - List of font family strings
+/// @prop {string} $typeface[id].style - `font-style` value
+/// @prop {string} $typeface[id].weight - `font-weight` value
 $typefaces: vars.$typefaces !default;
+
+/// Reference font sizes
+/// @type Map
 $font-sizes: vars.$font-sizes !default;
+
+/// Reference line heights
+/// @type Map
 $line-heights: vars.$line-heights !default;
 
 @use "mq" as * with ($breakpoints: $mq-breakpoints);
 
 @use "typescale" with ($font-sizes: $font-sizes, $line-heights: $line-heights );
 
+/// Outputs a set of text styles from a configuration map
+/// @param {map} $settings Settings map. See the example for all the supported properties.
+/// @param {string} $settings.typeface - Typeface id as defined in `$typefaces`
+/// @param {list} $settings.sizes - List of font size ids as defined in `$font-sizes`
+/// @param {string} $settings.case - Font case. Supported values as `"all-lowercase"`, `"all-caps"`, `"small-caps"`, `"all-small-caps"`
+/// @param {number} $settings.tracking - Letterspacing multiplier
+/// @param {list} $settings.feautures - List if `font-feature-settings` values
+/// @param {map} $settings.md - Breakpoint modifiers settings. Each modifier is identified by the breakpoint id in `$mq-breakpoints`
+/// @example scss
+///   $textstyle-body: (
+///     typeface: "serif",
+///     sizes: (0, 3),
+///     tracking: 50,
+///     features: ("onum"),
+///     breakpoints: (
+///       md: (
+///         // change the font size at md
+///         sizes: (2, 3)
+///       )
+///     )
+///   );
+///   @include textstyle($textstyle-body);
+///
 @mixin textstyle ($settings) {
   // Typeface
   @if map.has-key($settings, "typeface") {

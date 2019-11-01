@@ -1,2 +1,5 @@
+// setup the package environment to "test"
+// this prevents functions and mixins
+// with @error statements to break to process.
 @use "../scss/env" with ($env: "test");
 @forward "true";
