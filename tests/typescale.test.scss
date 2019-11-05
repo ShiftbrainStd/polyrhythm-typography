@@ -1,0 +1,39 @@
+$font-sizes: (
+  1: 2rem,
+  0: 1rem,
+);
+$line-heights: (
+  1: 4,
+  0: 3,
+);
+
+@use "setup" as *;
+@use "../scss/typescale" as ts with (
+  $font-sizes: $font-sizes,
+  $line-heights: $line-heights
+);
+
+@include describe("Typescale Module") {
+  @include describe("sizes-lh()") {
+    @include it("should resolve a line height given a scale number") {
+      @include assert-equal(ts.sizes-lh(0), 3);
+      @include assert-equal(ts.sizes-lh(1), 4);
+    }
+  }
+
+  @include describe("@mixin sizes()") {
+    @include it("should output a font configuration give two mapped values") {
+      @include assert {
+        @include output {
+          $config: (0, 1);
+          @include ts.sizes($config);
+        }
+
+        @include expect {
+          font-size: 1rem;
+          line-height: 4;
+        }
+      }
+    }
+  }
+}

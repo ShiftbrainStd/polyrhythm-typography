@@ -1,13 +1,16 @@
 @use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 
 $font-sizes: () !default;
 $line-heights: () !default;
 
 @mixin sizes($font-size, $line-height: null) {
-  @if type-of($font-size) == list {
+  @if meta.type-of($font-size) == list {
     $line-height: list.nth($font-size, 2);
     $font-size: list.nth($font-size, 1);
+  } @else {
+    @warn "typescale.sizes expects a list as first argument";
   }
 
   font-size: map.get($font-sizes, $font-size);
