@@ -21,7 +21,6 @@ A Sass module to create and manage beautiful and consistent typographic rules fo
   - [Pre-requisites](#pre-requisites)
   - [Setup](#setup)
   - [Using `textstyle`](#using-textstyle)
-    - [Example:](#example)
   - [Setup size scales](#setup-size-scales)
   - [Breakpoint modifiers](#breakpoint-modifiers)
 - [Run demo](#run-demo)
@@ -108,7 +107,7 @@ The module exposes a `textstyle` mixin accepting a configuration map with the fo
 
 [font-feature-settings]: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
 
-#### Example:
+**Example:**
 
 <!-- prettier-ignore-start -->
 ```scss
