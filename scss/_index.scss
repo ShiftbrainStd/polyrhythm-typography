@@ -31,10 +31,10 @@ $line-heights: vars.$line-heights !default;
 /// Outputs a set of text styles from a configuration map
 /// @param {map} $settings Settings map. See the example for all the supported properties.
 /// @param {string} $settings.typeface - Typeface id as defined in `$typefaces`
-/// @param {list} $settings.sizes - List of font size ids as defined in `$font-sizes`
-/// @param {string} $settings.case - Font case. Supported values as `"all-lowercase"`, `"all-caps"`, `"small-caps"`, `"all-small-caps"`
+/// @param {list} $settings.sizes - A list containing a modular value for the font size and its line-height as defined in `$font-sizes`
+/// @param {string} $settings.case - Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"`, `"all-small-caps"`
 /// @param {number} $settings.tracking - Letterspacing multiplier
-/// @param {list} $settings.feautures - List if `font-feature-settings` values
+/// @param {list} $settings.features - List of `font-feature-settings` values
 /// @param {map} $settings.md - Breakpoint modifiers settings. Each modifier is identified by the breakpoint id in `$mq-breakpoints`
 /// @example scss
 ///   $textstyle-body: (
@@ -51,7 +51,7 @@ $line-heights: vars.$line-heights !default;
 ///   );
 ///   @include textstyle($textstyle-body);
 ///
-@mixin textstyle ($settings) {
+@mixin textstyle($settings) {
   // Typeface
   @if map.has-key($settings, "typeface") {
     $typeface: map.get($typefaces, map.get($settings, "typeface"));
@@ -79,22 +79,16 @@ $line-heights: vars.$line-heights !default;
 
     @if $case == "all-lowercase" {
       text-transform: lowercase;
-    }
-
-    @else if $case == "all-caps" {
+    } @else if $case == "all-caps" {
       text-transform: uppercase;
-    }
-
-    @else if $case == "small-caps" {
+    } @else if $case == "small-caps" {
       text-transform: uppercase;
 
       @supports (font-variant-caps: "small-caps") {
         font-variant-caps: small-caps;
         text-transform: none;
       }
-    }
-
-    @else if $case == "all-small-caps" {
+    } @else if $case == "all-small-caps" {
       text-transform: uppercase;
 
       @supports (font-variant-caps: small-caps) {
@@ -109,7 +103,11 @@ $line-heights: vars.$line-heights !default;
     $features: ();
 
     @each $feature in map.get($settings, "features") {
-      $features: list.append($features, string.quote($feature), $separator: comma);
+      $features: list.append(
+        $features,
+        string.quote($feature),
+        $separator: comma
+      );
 
       @if $feature == "palt" {
         font-kerning: normal;

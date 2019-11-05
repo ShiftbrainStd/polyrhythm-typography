@@ -4,7 +4,7 @@
 $font-sizes: () !default;
 $line-heights: () !default;
 
-@mixin sizes ($font-size, $line-height: null) {
+@mixin sizes($font-size, $line-height: null) {
   @if type-of($font-size) == list {
     $line-height: list.nth($font-size, 2);
     $font-size: list.nth($font-size, 1);
@@ -14,6 +14,6 @@ $line-heights: () !default;
   line-height: sizes-lh($line-height);
 }
 
-@function sizes-lh ($line-height) {
+@function sizes-lh($line-height) {
   @return map.get($line-heights, $line-height);
 }

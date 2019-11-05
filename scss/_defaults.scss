@@ -1,5 +1,6 @@
 /// Default breakpoints
 /// @type Map
+/* prettier-ignore */
 $breakpoints: (
   "xs": 0,
   "sm": 36em, // 576px
@@ -10,6 +11,7 @@ $breakpoints: (
 
 /// Default typefaces
 /// @type Map
+/* prettier-ignore */
 $typefaces: (
   "sans": (
     "family": ("Helvetica Neue", "Arial", sans-serif),

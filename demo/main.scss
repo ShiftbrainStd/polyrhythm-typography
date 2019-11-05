@@ -2,7 +2,7 @@
 @use "theme";
 
 body {
-  @include polyrhythm-typography.textstyle(theme.$textstyle-body)
+  @include polyrhythm-typography.textstyle(theme.$textstyle-body);
 }
 
 h1 {

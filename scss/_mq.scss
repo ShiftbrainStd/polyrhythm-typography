@@ -6,13 +6,12 @@
 
 $breakpoints: () !default;
 
-
 @function get($mq) {
   @if (map.has-key($breakpoints, $mq) == false) {
     @if (env.is("test") == false) {
       @error "Unable to find a media query named '#{$mq}'.";
     }
-    @return null
+    @return null;
   }
   @return map.get($breakpoints, $mq);
 }
