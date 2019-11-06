@@ -1,0 +1,76 @@
+$mq-breakpoints: (
+  "sm": 36em,
+);
+
+$typefaces: (
+  "sans": (
+    "family": (
+      "TEST",
+    ),
+    "style": normal,
+    "weight": 400,
+  ),
+);
+
+$font-sizes: (
+  2: 6rem,
+  1: 2rem,
+);
+
+$line-heights: (
+  1: 4,
+);
+
+@use "setup" as *;
+@use "../scss/index" as main with (
+  $mq-breakpoints: $mq-breakpoints,
+  $typefaces: $typefaces,
+  $font-sizes: $font-sizes,
+  $line-heights: $line-heights
+);
+
+@include describe("@mixin textstyle()") {
+  @include it("should output font rules") {
+    @include assert {
+      @include output {
+        $config: (
+          typeface: "sans",
+          sizes: (
+            1,
+            1,
+          ),
+          case: "all-lowercase",
+          features: (
+            "palt",
+          ),
+          breakpoints: (
+            sm: (
+              sizes: (
+                2,
+                1,
+              ),
+            ),
+          ),
+        );
+        @include main.textstyle($config);
+      }
+
+      @include expect {
+        // stylelint-disable-next-line
+        font-family: "TEST";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 4;
+        text-transform: lowercase;
+        font-kerning: normal;
+        font-feature-settings: "palt";
+
+        @media (min-width: 36em) {
+          font-size: 6rem;
+          line-height: 4;
+        }
+      }
+    }
+  }
+}
