@@ -5,7 +5,6 @@
 ));
 
 @include describe("Media Query Module") {
-
   @include describe("mq.get()") {
     @include it("should fail for undefined media queries") {
       // this passes
@@ -16,9 +15,7 @@
     }
   }
 
-
   @include describe("@mixin mq.mq()") {
-
     @include it("should output a `from` media query") {
       @include assert {
         @include output {
@@ -51,5 +48,4 @@
       }
     }
   }
-
 }

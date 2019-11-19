@@ -21,19 +21,10 @@ $line-heights: (
     }
   }
 
-  @include describe("@mixin sizes()") {
-    @include it("should output a font configuration give two mapped values") {
-      @include assert {
-        @include output {
-          $config: (0, 1);
-          @include ts.sizes($config);
-        }
-
-        @include expect {
-          font-size: 1rem;
-          line-height: 4;
-        }
-      }
+  @include describe("sizes()") {
+    @include it("should return a font configuration give two mapped values") {
+      $config: (0, 1);
+      @include assert-equal(ts.sizes($config), (1rem, 4));
     }
   }
 }

@@ -28,6 +28,8 @@ $line-heights: vars.$line-heights !default;
 
 @use "typescale" with ($font-sizes: $font-sizes, $line-heights: $line-heights );
 
+$type-scaler: meta.get-function("sizes", $module: "typescale") !default;
+
 /// Outputs a set of text styles from a configuration map
 /// @param {map} $settings Settings map. See the example for all the supported properties.
 /// @param {string} $settings.typeface - Typeface id as defined in `$typefaces`
@@ -65,7 +67,9 @@ $line-heights: vars.$line-heights !default;
 
   // Font size and line height
   @if map.has-key($settings, "sizes") {
-    @include typescale.sizes(map.get($settings, "sizes"));
+    $sizes: meta.call($type-scaler, map.get($settings, "sizes"));
+    font-size: list.nth($sizes, 1);
+    line-height: list.nth($sizes, 2);
   }
 
   // Tracking
