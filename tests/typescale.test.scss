@@ -14,17 +14,17 @@ $line-heights: (
 );
 
 @include describe("Typescale Module") {
-  @include describe("sizes-lh()") {
+  @include describe("get-sizes-lh()") {
     @include it("should resolve a line height given a scale number") {
-      @include assert-equal(ts.sizes-lh(0), 3);
-      @include assert-equal(ts.sizes-lh(1), 4);
+      @include assert-equal(ts.get-sizes-lh(0), 3);
+      @include assert-equal(ts.get-sizes-lh(1), 4);
     }
   }
 
-  @include describe("sizes()") {
+  @include describe("get-sizes()") {
     @include it("should return a font configuration give two mapped values") {
       $config: (0, 1);
-      @include assert-equal(ts.sizes($config), (1rem, 4));
+      @include assert-equal(ts.get-sizes($config), (1rem, 4));
     }
   }
 }

@@ -5,7 +5,7 @@
 $font-sizes: () !default;
 $line-heights: () !default;
 
-@function sizes($font-size, $line-height: null) {
+@function get-sizes($font-size, $line-height: null) {
   @if meta.type-of($font-size) == list {
     $line-height: list.nth($font-size, 2);
     $font-size: list.nth($font-size, 1);
@@ -13,9 +13,9 @@ $line-heights: () !default;
     @warn "typescale.sizes expects a list as first argument";
   }
 
-  @return (map.get($font-sizes, $font-size), sizes-lh($line-height));
+  @return (map.get($font-sizes, $font-size), get-sizes-lh($line-height));
 }
 
-@function sizes-lh($line-height) {
+@function get-sizes-lh($line-height) {
   @return map.get($line-heights, $line-height);
 }
