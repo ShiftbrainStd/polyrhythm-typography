@@ -104,7 +104,7 @@ The module exposes a `textstyle` mixin accepting a configuration map with the fo
 | case     | string | Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"` and `"all-small-caps"` |
 | tracking | number | Letter spacing multiplier                                                                              |
 | features | list   | List of [`font-feature-settings`][font-feature-settings] values                                        |
-| md       | map    | Breakpoint modifiers settings. (see below)                                                             |
+| breakpoints | map    | Breakpoint modifiers settings. (see below)                                                             |
 
 [font-feature-settings]: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
 
@@ -153,7 +153,7 @@ $line-heights: (
 @use "polyrhythm-typography" as pt with (
   // ...
   $font-sizes: $font-sizes,
-  $line-height: $line-height,
+  $line-heights: $line-heights,
 );
 
 $textstyle-body: (
@@ -176,7 +176,7 @@ $textstyle-body: (
 
 ### Use a custom type scaler calculator
 
-By default `polyrhythm-typography` uses an internal function (aka _type scaler_) that matches numeric size scales with the corresponding values on the `$font-sizes` and `$line-height` maps.
+By default `polyrhythm-typography` uses an internal function (aka _type scaler_) that matches numeric size scales with the corresponding values on the `$font-sizes` and `$line-heights` maps.
 
 If you need more control over the calculation process, you can provide your custom type scaler function.
 
@@ -211,7 +211,7 @@ To instruct `polyrhythm-typography` to use your custom type scaler pass it as th
 );
 ```
 
-**Note**: `$font-sizes` and `$line-height` configuration options will not have any effect when using a custom type scaler function.
+**Note**: `$font-sizes` and `$line-heights` configuration options will not have any effect when using a custom type scaler function.
 
 ### Breakpoint modifiers
 
