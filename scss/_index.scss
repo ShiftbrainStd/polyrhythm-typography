@@ -69,7 +69,9 @@ $type-scaler: meta.get-function("sizes", $module: "typescale") !default;
   @if map.has-key($settings, "sizes") {
     $sizes: meta.call($type-scaler, map.get($settings, "sizes"));
     font-size: list.nth($sizes, 1);
-    line-height: list.nth($sizes, 2);
+    @if list.length($sizes) == 2 {
+      line-height: list.nth($sizes, 2);
+    }
   }
 
   // Tracking
