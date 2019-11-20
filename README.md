@@ -22,6 +22,7 @@ A Sass module to create and manage beautiful and consistent typographic rules fo
   - [Setup](#setup)
   - [Using `textstyle`](#using-textstyle)
   - [Setup size scales](#setup-size-scales)
+  - [Use a custom type scaler calculator](#use-a-custom-type-scaler-calculator)
   - [Breakpoint modifiers](#breakpoint-modifiers)
 - [Run demo](#run-demo)
 - [Run tests](#run-tests)
@@ -149,7 +150,7 @@ $line-heights: (
   0: 1,
 );
 
-@use 'polyrhythm-typography' as pt with (
+@use "polyrhythm-typography" as pt with (
   // ...
   $font-sizes: $font-sizes,
   $line-height: $line-height,
@@ -172,6 +173,45 @@ $textstyle-body: (
 }
 ```
 <!-- prettier-ignore-end -->
+
+### Use a custom type scaler calculator
+
+By default `polyrhythm-typography` uses an internal function (aka _type scaler_) that matches numeric size scales with the corresponding values on the `$font-sizes` and `$line-height` maps.
+
+If you need more control over the calculation process, you can provide your custom type scaler function.
+
+A type scaler function receives a list with two numeric values (font-size and line-height) and must return a list with valid CSS font-size and line-height (optional) values.
+
+Here is an example:
+
+```scss
+// _helpers.scss
+@use "sass:list";
+
+// $input: (1, 3)
+@function my-scaler($input) {
+  $sizes: ();
+  @each $i in $input {
+    $sizes: list.append($sizes, $i * 10px);
+  }
+  @return $sizes; // (10px, 30px)
+}
+```
+
+To instruct `polyrhythm-typography` to use your custom type scaler pass it as the module configuration's `$type-scaler` option:
+
+```scss
+// main.scss
+@use "sass:meta";
+@use "helpers";
+
+@use "polyrhythm-typography" as pt with (
+  //... other configurations
+  $type-scaler: meta.get-function("my-scaler", $module: "helpers")
+);
+```
+
+**Note**: `$font-sizes` and `$line-height` configuration options will not have any effect when using a custom type scaler function.
 
 ### Breakpoint modifiers
 
