@@ -1,0 +1,8 @@
+@use "sass:list";
+@function custom-sizes($list) {
+  $sizes: ();
+  @each $i in $list {
+    $sizes: list.append($sizes, $i * 10px);
+  }
+  @return $sizes;
+}

@@ -1,0 +1,44 @@
+$typefaces: (
+  "sans": (
+    "family": (
+      "TEST",
+    ),
+    "style": normal,
+    "weight": 400,
+  ),
+);
+
+@use "sass:list";
+@use "sass:meta";
+@use "./helpers";
+@use "setup" as *;
+@use "../scss/index" as main with (
+  $typefaces: $typefaces,
+  $type-scaler: meta.get-function("custom-sizes", $module: "helpers")
+);
+
+@include describe("@mixin textstyle() with custom scaler") {
+  @include it("should output font rules") {
+    @include assert {
+      @include output {
+        $config: (
+          typeface: "sans",
+          sizes: (
+            1,
+            2,
+          ),
+        );
+        @include main.textstyle($config);
+      }
+
+      @include expect {
+        // stylelint-disable-next-line
+        font-family: "TEST";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 20px;
+      }
+    }
+  }
+}

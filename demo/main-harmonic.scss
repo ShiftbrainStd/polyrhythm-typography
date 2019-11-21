@@ -1,0 +1,14 @@
+@use "sass:meta";
+@use "../node_modules/harmonic-modular-scale";
+@use "../index" as polyrhythm-typography with (
+  $type-scaler: meta.get-function("get-sizes", $module: "harmonic-modular-scale")
+);
+@use "theme";
+
+body {
+  @include polyrhythm-typography.textstyle(theme.$textstyle-body);
+}
+
+h1 {
+  @include polyrhythm-typography.textstyle(theme.$textstyle-heading-1);
+}

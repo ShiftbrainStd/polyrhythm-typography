@@ -2,7 +2,6 @@
 $textstyle-body: (
   "typeface": "serif",
   "sizes": (0, 3),
-  "tracking": 50,
   "features": ("onum"),
   "breakpoints": (
     "md": (
@@ -18,5 +17,4 @@ $textstyle-heading-1: (
   "sizes": (4, 1),
   "case": "all-small-caps",
   "tracking": 50,
-  "features": ("onum"),
 );
