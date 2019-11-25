@@ -103,10 +103,7 @@ The module exposes a `textstyle` mixin accepting a configuration map with the fo
 | sizes    | list   | A list containing a scalar value for the font size (`-2` to `4`) and its line-height (`0` to `4`)      |
 | case     | string | Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"` and `"all-small-caps"` |
 | tracking | number | Letter spacing multiplier                                                                              |
-| features | list   | List of [`font-feature-settings`][font-feature-settings] values                                        |
 | breakpoints | map    | Breakpoint modifiers settings. (see below)                                                             |
-
-[font-feature-settings]: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
 
 **Example:**
 
@@ -116,7 +113,6 @@ $textstyle-body: (
   typeface: "sans",
   sizes: (0, 3),
   tracking: 50,
-  features: ("onum"),
 );
 
 .component__body {
@@ -223,7 +219,6 @@ $textstyle-body: (
   typeface: "sans",
   sizes: (0, 3),
   tracking: 50,
-  features: ("onum"),
   breakpoints: (
     md: (
       // change the font size at md

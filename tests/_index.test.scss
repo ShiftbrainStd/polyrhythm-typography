@@ -40,9 +40,6 @@ $line-heights: (
             1,
           ),
           case: "all-lowercase",
-          features: (
-            "palt",
-          ),
           breakpoints: (
             sm: (
               sizes: (
@@ -64,7 +61,6 @@ $line-heights: (
         line-height: 4;
         text-transform: lowercase;
         font-kerning: normal;
-        font-feature-settings: "palt";
 
         @media (min-width: 36em) {
           font-size: 6rem;
