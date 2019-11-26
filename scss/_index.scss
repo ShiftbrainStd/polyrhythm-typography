@@ -36,14 +36,12 @@ $type-scaler: meta.get-function("get-sizes", $module: "typescale") !default;
 /// @param {list} $settings.sizes - A list containing a modular value for the font size and its line-height as defined in `$font-sizes`
 /// @param {string} $settings.case - Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"`, `"all-small-caps"`
 /// @param {number} $settings.tracking - Letterspacing multiplier
-/// @param {list} $settings.features - List of `font-feature-settings` values
 /// @param {map} $settings.md - Breakpoint modifiers settings. Each modifier is identified by the breakpoint id in `$mq-breakpoints`
 /// @example scss
 ///   $textstyle-body: (
 ///     typeface: "serif",
 ///     sizes: (0, 3),
 ///     tracking: 50,
-///     features: ("onum"),
 ///     breakpoints: (
 ///       md: (
 ///         // change the font size at md
@@ -102,25 +100,6 @@ $type-scaler: meta.get-function("get-sizes", $module: "typescale") !default;
         text-transform: lowercase;
       }
     }
-  }
-
-  // OpenType features
-  @if map.has-key($settings, "features") {
-    $features: ();
-
-    @each $feature in map.get($settings, "features") {
-      $features: list.append(
-        $features,
-        string.quote($feature),
-        $separator: comma
-      );
-
-      @if $feature == "palt" {
-        font-kerning: normal;
-      }
-    }
-
-    font-feature-settings: $features;
   }
 
   // Breakpoints
