@@ -42,7 +42,7 @@ npm install devjam/polyrhythm-typography#master
 
 ### Pre-requisites
 
-First of all setup the project's typefaces as a map where each key identifies the typeface and its value has the following properties:
+First of all setup the project’s typefaces as a map where each key identifies the typeface and its value has the following properties:
 
 - `family` {list} - List of font family strings (required)
 - `style` {string} - `font-style` value
@@ -194,7 +194,7 @@ Here is an example:
 }
 ```
 
-To instruct `polyrhythm-typography` to use your custom type scaler pass it as the module configuration's `$type-scaler` option:
+To instruct `polyrhythm-typography` to use your custom type scaler pass it as the module configuration’s `$type-scaler` option:
 
 ```scss
 // main.scss
