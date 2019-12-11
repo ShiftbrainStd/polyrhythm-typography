@@ -1,5 +1,5 @@
 @use "setup" as *;
-@use "../scss/mq" as mq with ($breakpoints: (
+@use "../../scss/mq" as mq with ($breakpoints: (
   "sm": 10rem,
   "md": 20rem
 ));
