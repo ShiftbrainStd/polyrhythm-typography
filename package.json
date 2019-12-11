@@ -98,7 +98,8 @@
       {
         "files": [
           "*.js",
-          "*.ts"
+          "*.ts",
+          "*.md"
         ],
         "options": {
           "singleQuote": true
