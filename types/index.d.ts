@@ -1,6 +1,8 @@
+import * as CSS from 'csstype'
+
 export type FontSize = string | number
 export type TypeScaler = (
-  fontSize: number | [number, number?],
+  fontSize: number | number[],
   lineHeight?: number
 ) => [FontSize, number | undefined]
 export interface TypeScaleConfig {
@@ -20,20 +22,20 @@ export interface PolyTypographyConfig extends TypeScaleConfig {
 }
 
 export interface TypeSetting {
-  sizes: [number, number]
+  sizes: number[]
   typeface: string
   tracking: number
   letterCase: string
-  breakpoints: Record<string, TypeSetting>
+  breakpoints: Record<string, Partial<TypeSetting>>
 }
 
 export interface TypeStyles {
-  fontFamily: string[]
-  fontStyle: string
-  fontWeight: string | number
-  fontSize: number | string
-  lineHeight: number
-  letterSpacing: string
-  textTransform: string
+  fontFamily: CSS.Properties['fontFamily']
+  fontStyle: CSS.Properties['fontStyle']
+  fontWeight: CSS.Properties['fontWeight']
+  fontSize: CSS.Properties['fontSize']
+  lineHeight: CSS.Properties['lineHeight']
+  letterSpacing: CSS.Properties['letterSpacing']
+  textTransform: CSS.Properties['textTransform']
   [key: string]: any
 }

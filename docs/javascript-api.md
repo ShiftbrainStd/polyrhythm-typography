@@ -1,0 +1,8 @@
+- [Install](#install)
+- [Usage](#usage)
+  - [Pre-requisites](#pre-requisites)
+  - [Setup](#setup)
+  - [Using `textstyle`](#using-textstyle)
+  - [Setup size scales](#setup-size-scales)
+  - [Use a custom type scaler calculator](#use-a-custom-type-scaler-calculator)
+  - [Breakpoint modifiers](#breakpoint-modifiers)

@@ -1,5 +1,5 @@
 {
-  "include": ["ts", "types", "ts/tests"],
+  "include": ["src", "types", "tests/ts", "demo"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
@@ -23,7 +23,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["ts/*", "node_modules/*"]
+      "*": ["src/*", "node_modules/*"]
     },
     "jsx": "react",
     "esModuleInterop": true
