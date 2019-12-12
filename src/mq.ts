@@ -10,6 +10,7 @@ export const BREAKPOINTS: Breakpoints = {
   xl: '80em', // 1280px
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function createMQ<B extends Breakpoints, K extends keyof B>(
   breakpoints = BREAKPOINTS as B
 ) {
@@ -19,22 +20,24 @@ export function createMQ<B extends Breakpoints, K extends keyof B>(
     return value
   }
 
-  function from(mq: K) {
+  function from(mq: K): string {
     return `@media (min-width: ${get(mq)})`
   }
 
-  function until(mq: K) {
+  function until(mq: K): string {
     return `@media not all and (min-width: ${get(mq)})`
   }
 
-  function mq<P extends { from?: K; until?: K }>(options: K | P) {
+  function mq<P extends { from?: K; until?: K }>(
+    options: K | P
+  ): (v: unknown) => Record<string, unknown> {
     const cfg = (typeof options === 'string' ? { from: options } : options) as P
     invariant(
       cfg.from || cfg.until,
       `At least one of "from" or "until" option must be defined`
     )
     const mq = cfg.from ? from(cfg.from) : until(cfg.until as K)
-    return (props = {}) => ({ [mq]: props })
+    return (props = {}): Record<string, unknown> => ({ [mq]: props })
   }
 
   return {

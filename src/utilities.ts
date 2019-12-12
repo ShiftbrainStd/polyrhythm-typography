@@ -5,8 +5,8 @@ const TYPE_CASE_MATRIX: Record<string, string> = {
   'all-small-caps': 'uppercase',
 }
 
-export function textTransform(value: string) {
-  const ret = {} as any
+export function textTransform(value: string): Record<string, unknown> {
+  const ret = {} as Record<string, unknown>
   ret.textTransform = TYPE_CASE_MATRIX[value] || value
 
   if (value === 'small-caps' || value === 'all-small-caps') {

@@ -22,6 +22,7 @@ export const LINE_HEIGHTS = new Map([
   [0, 1],
 ])
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function createTypeScale(
   { fontSizes = FONT_SIZES, lineHeights = LINE_HEIGHTS } = {} as Partial<
     TypeScaleConfig

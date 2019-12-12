@@ -50,6 +50,7 @@ export const TYPEFACES = {
   },
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function createTypography(
   {
     breakpoints,
@@ -62,7 +63,9 @@ export function createTypography(
   const typeScale = createTypeScale(tsConfig)
   const scaler = typeScaler || typeScale.getSizes
 
-  return function textstyle(settings: Partial<TypeSetting>) {
+  return function textstyle(
+    settings: Partial<TypeSetting>
+  ): Partial<TypeStyles> {
     const { typeface, sizes, tracking, letterCase, breakpoints } = settings
     const styles: Partial<TypeStyles> = {}
 
