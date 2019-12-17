@@ -8,7 +8,9 @@ const options = {
   it,
 }
 
-glob.sync('./*.test.scss', {
-  cwd: __dirname,
-  absolute: true,
-}).forEach((file) => runSass({ file }, options))
+glob
+  .sync('./*.test.scss', {
+    cwd: __dirname,
+    absolute: true,
+  })
+  .forEach(file => runSass({ file }, options))

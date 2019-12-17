@@ -8,7 +8,7 @@ $line-heights: (
 );
 
 @use "setup" as *;
-@use "../scss/typescale" as ts with (
+@use "../../scss/typescale" as ts with (
   $font-sizes: $font-sizes,
   $line-heights: $line-heights
 );

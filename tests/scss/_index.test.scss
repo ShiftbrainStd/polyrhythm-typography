@@ -22,7 +22,7 @@ $line-heights: (
 );
 
 @use "setup" as *;
-@use "../scss/index" as main with (
+@use "../../scss/index" as main with (
   $mq-breakpoints: $mq-breakpoints,
   $typefaces: $typefaces,
   $font-sizes: $font-sizes,

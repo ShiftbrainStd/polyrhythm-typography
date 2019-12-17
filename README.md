@@ -12,7 +12,9 @@
 
 > Polyrhythm Typography Module
 
-A Sass module to create and manage beautiful and consistent typographic rules for your project.
+A library to create and manage beautiful and consistent typographic rules for your project. Distributes as a Sass and JavaScript module
+
+**This documentation refers to the Sass APIs. To use the library with JavaScript read the [documentation here](docs/javascript-api.md).**
 
 <!-- TOC -->
 
@@ -97,12 +99,12 @@ $mq-breakpoints: (
 
 The module exposes a `textstyle` mixin accepting a configuration map with the following properties:
 
-| name     | type   | description                                                                                            |
-| -------- | ------ | ------------------------------------------------------------------------------------------------------ |
-| typeface | string | Typeface id as defined in `$typefaces`                                                                 |
-| sizes    | list   | A list containing a scalar value for the font size (`-2` to `4`) and its line-height (`0` to `4`)      |
-| case     | string | Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"` and `"all-small-caps"` |
-| tracking | number | Letter spacing multiplier                                                                              |
+| name        | type   | description                                                                                            |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| typeface    | string | Typeface id as defined in `$typefaces`                                                                 |
+| sizes       | list   | A list containing a scalar value for the font size (`-2` to `4`) and its line-height (`0` to `4`)      |
+| case        | string | Font case. Supported values are `"all-lowercase"`, `"all-caps"`, `"small-caps"` and `"all-small-caps"` |
+| tracking    | number | Letter spacing multiplier                                                                              |
 | breakpoints | map    | Breakpoint modifiers settings. (see below)                                                             |
 
 **Example:**

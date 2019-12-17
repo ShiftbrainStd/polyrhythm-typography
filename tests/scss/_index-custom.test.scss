@@ -12,7 +12,7 @@ $typefaces: (
 @use "sass:meta";
 @use "./helpers";
 @use "setup" as *;
-@use "../scss/index" as main with (
+@use "../../scss/index" as main with (
   $typefaces: $typefaces,
   $type-scaler: meta.get-function("custom-sizes", $module: "helpers")
 );
