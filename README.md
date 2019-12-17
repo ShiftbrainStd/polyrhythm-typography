@@ -245,7 +245,7 @@ npm run test
 
 ## Author
 
-👤 **Shiftbrain Inc. (https://www.shiftbrain.com/)**
+👤 **Shiftbrain Standard Design Unit (https://standard.shiftbrain.com/)**
 
 - Twitter: [@ShiftbrainStd](https://twitter.com/ShiftbrainStd)
 - Github: [@ShiftbrainStd](https://github.com/ShiftbrainStd)
@@ -256,7 +256,7 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 ## 📝 License
 
-Copyright © 2019 [Shiftbrain Standard Design Unit](https://standard.shiftbrain.com/).
+Copyright © 2019 [Shiftbrain Standard Design Unit](https://standard.shiftbrain.com/).<br />This project is MIT licensed.
 
 ---
 
