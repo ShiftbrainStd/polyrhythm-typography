@@ -1,11 +1,11 @@
-# polyrhythm-typography
+# Polyrhythm Typography
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/devjam/polyrhythm-typography#readme" target="_blank">
+  <a href="https://github.com/ShiftbrainStd/polyrhythm-typography#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/devjam/polyrhythm-typography/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/ShiftbrainStd/polyrhythm-typography/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
 </p>
@@ -37,7 +37,7 @@ A library to create and manage beautiful and consistent typographic rules for yo
 ## Install
 
 ```sh
-npm install devjam/polyrhythm-typography#master
+npm install @shiftbrainstd/polyrhythm-typography
 ```
 
 ## Usage
@@ -247,8 +247,8 @@ npm run test
 
 👤 **Shiftbrain Inc. (https://www.shiftbrain.com/)**
 
-- Twitter: [@shiftbrain](https://twitter.com/shiftbrain)
-- Github: [@devjam](https://github.com/devjam)
+- Twitter: [@ShiftbrainStd](https://twitter.com/ShiftbrainStd)
+- Github: [@ShiftbrainStd](https://github.com/ShiftbrainStd)
 
 ## 🤝 Contributing
 
@@ -256,7 +256,7 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 ## 📝 License
 
-Copyright © 2019 [Shiftbrain Inc. (https://www.shiftbrain.com/)](https://github.com/).
+Copyright © 2019 [Shiftbrain Standard Design Unit](https://standard.shiftbrain.com/).
 
 ---
 

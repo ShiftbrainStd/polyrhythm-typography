@@ -1,8 +1,7 @@
 {
-  "name": "polyrhythm-typography",
+  "name": "@shiftbrainstd/polyrhythm-typography",
   "description": "Polyrhythm Typography Module",
-  "author": "Shiftbrain Inc. (https://www.shiftbrain.com/)",
-  "private": true,
+  "author": "Shiftbrain Standard Design Unit (https://standard.shiftbrain.com/)",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/polyrhythm-typography.esm.js",
@@ -15,13 +14,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devjam/polyrhythm-typography.git"
+    "url": "git+https://github.com/ShiftbrainStd/polyrhythm-typography.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devjam/polyrhythm-typography/issues"
+    "url": "https://github.com/ShiftbrainStd/polyrhythm-typography/issues"
   },
-  "homepage": "https://github.com/devjam/polyrhythm-typography#readme",
+  "homepage": "https://github.com/ShiftbrainStd/polyrhythm-typography#readme",
   "scripts": {
     "prepublishOnly": "run-s lint test build",
     "sass:watch": "chokidar '**/*.scss' -c 'npm run sass:build' --initial",
@@ -36,7 +35,11 @@
     "lint": "run-s sass:lint ts:lint",
     "test": "jest"
   },
+  "dependencies": {
+    "tiny-invariant": "^1.0.6"
+  },
   "devDependencies": {
+    "@shiftbrainstd/harmonic-modular-scale": "^1.0.0",
     "@types/jest": "^24.0.23",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
@@ -48,7 +51,6 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.0.1",
     "fast-glob": "^3.1.1",
-    "harmonic-modular-scale": "github:devjam/harmonic-modular-scale#master",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
@@ -63,6 +65,9 @@
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
     "typescript": "^3.6.4"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "husky": {
     "hooks": {
@@ -106,8 +111,5 @@
         }
       }
     ]
-  },
-  "dependencies": {
-    "tiny-invariant": "^1.0.6"
   }
 }

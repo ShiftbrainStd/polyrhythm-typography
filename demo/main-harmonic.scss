@@ -1,5 +1,5 @@
 @use "sass:meta";
-@use "../node_modules/harmonic-modular-scale";
+@use "../node_modules/@shiftbrainstd/harmonic-modular-scale";
 @use "../index" as polyrhythm-typography with (
   $type-scaler: meta.get-function("get-sizes", $module: "harmonic-modular-scale")
 );
