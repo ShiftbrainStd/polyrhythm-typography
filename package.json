@@ -2,7 +2,7 @@
   "name": "@shiftbrainstd/polyrhythm-typography",
   "description": "Polyrhythm Typography Module",
   "author": "Shiftbrain Standard Design Unit (https://standard.shiftbrain.com/)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/polyrhythm-typography.esm.js",
   "unpkg": "dist/polyrhythm-typography.umd.production.min.js",
@@ -10,6 +10,7 @@
   "files": [
     "_index.scss",
     "dist",
+    "types",
     "scss/**/*"
   ],
   "repository": {
@@ -36,7 +37,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "tiny-invariant": "^1.0.6"
+    "tiny-invariant": "^1.0.6",
+    "csstype": "^2.6.7"
   },
   "devDependencies": {
     "@shiftbrainstd/harmonic-modular-scale": "^1.0.0",
@@ -45,7 +47,6 @@
     "@typescript-eslint/parser": "^2.6.0",
     "browser-sync": "^2.26.7",
     "chokidar-cli": "^2.1.0",
-    "csstype": "^2.6.7",
     "emotion": "^10.0.23",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.5.0",
